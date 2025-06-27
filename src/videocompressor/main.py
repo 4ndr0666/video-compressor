@@ -54,6 +54,7 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec())
 
+
 def load_settings():
     try:
         with open(os.path.join(g.res_dir, "settings.json"), "r") as f:

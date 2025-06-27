@@ -12,9 +12,5 @@ setup(
         "PyQt6>=6.6.1",
         "requests>=2.31.0",
     ],
-    entry_points={
-        "console_scripts": [
-            "videocompressor=main:main"
-        ]
-    },
+    entry_points={"console_scripts": ["videocompressor=main:main"]},
 )
