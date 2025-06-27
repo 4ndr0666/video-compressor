@@ -1,27 +1,39 @@
-# Video Compressor
+# 🎥 VideoCompressor
 
-🎥 Compress videos to any file size using a modern PyQt6 GUI.
+Compress videos to any target file size via a modern PyQt6 GUI — clean, native, and optimized for **Arch Linux**.
 
-## ✅ Features
+---
 
-- Multi-video queue
-- Target size (MB) control
-- GPU acceleration (via ffmpeg + h264 encoders)
-- Clean PyQt6 interface
-- Progress tracking
-- Persistent settings
-- Notifications
-- Arch Linux optimized
+## ✨ Features
 
-## 🔧 Install
+- Batch video queueing
+- Target precise output file size (in MB)
+- GPU acceleration support (NVIDIA NVENC, Intel QSV, AMD AMF)
+- Two-pass encoding with automatic bitrate calculation
+- Preserves audio quality and sync
+- Native Linux notifications via `notify-send`
+- Persistent user settings (target size + GPU toggle)
+- Auto-opens output directory after encoding
+- Clean PyQt6 interface with progress and status logging
+
+---
+
+## 🛠 Install (Arch Linux Only)
 
 ```bash
+# Clone the project
 git clone https://github.com/4ndr0666/video-compressor.git
 cd video-compressor
+
+# Create and activate a virtual environment
 python -m venv .venv
 source .venv/bin/activate
-pip install .
-````
+
+# Install dependencies and build the package
+make install
+```
+
+---
 
 ## 🚀 Run
 
@@ -29,6 +41,32 @@ pip install .
 videocompressor
 ```
 
-## 👨‍💻 Maintainer
+Or:
 
-**4ndr0666**
+```bash
+make run
+```
+
+---
+
+## 🧹 Clean Build Artifacts
+
+```bash
+make clean
+```
+
+---
+
+## 🗑 Uninstall
+
+```bash
+make uninstall
+```
+
+---
+
+## 🧑‍💻 Maintainer
+
+**4ndr0666**  
+MIT Licensed  
+Arch Linux Native
