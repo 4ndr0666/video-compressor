@@ -1,23 +1,45 @@
-import json
-import sys
 import os
+import sys
+import json
 import subprocess
 import psutil
-import src.globals as g
-from src.download import DownloadThread
-from src.thread import CompressionThread
+
 from PyQt6.QtWidgets import (
     QApplication,
-    QWidget,
     QPushButton,
-    QFileDialog,
-    QLabel,
     QLineEdit,
+    QLabel,
     QCheckBox,
     QProgressBar,
+    QFileDialog,
+    QWidget,
 )
 from PyQt6.QtGui import QIcon
-from src.styles import *
+
+from src import globals as g
+from src.styles import (
+    WINDOW,
+    SELECT_BUTTON,
+    COMPRESS_BUTTON,
+    ABORT_BUTTON,
+    FILE_SIZE_LABEL,
+    FILE_SIZE_ENTRY,
+    GPU_LABEL,
+    GPU_CHECKBOX,
+    LOG_AREA,
+    PROGRESS_BAR,
+    LABEL_STYLE,
+    LABEL_LOG_STYLE,
+    BUTTON_DISABLED_STYLE,
+    BUTTON_SELECT_STYLE,
+    BUTTON_COMPRESS_STYLE,
+    BUTTON_ABORT_STYLE,
+    PROGRESS_BAR_STYLE,
+    CHECKBOX_STYLE,
+    LINEEDIT_STYLE,
+)
+from src.thread import CompressionThread
+from src.download import DownloadThread
 
 
 def load_settings():

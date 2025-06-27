@@ -2,7 +2,6 @@ import json
 import subprocess
 import os
 import src.globals as g
-from math import ceil, floor
 from PyQt6.QtCore import QThread, pyqtSignal
 
 

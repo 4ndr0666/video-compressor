@@ -65,7 +65,7 @@ class DownloadThread(QThread):
             dst = os.path.join(g.bin_dir, file_name)
             try:
                 shutil.move(src, dst)
-            except:
+            except Exception:
                 print(f"Skipped {file_name} - file already exists")
 
         # Cleanup

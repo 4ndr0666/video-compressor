@@ -13,9 +13,5 @@ setup(
         "requests>=2.31.0",
         "psutil>=5.9.8",
     ],
-    entry_points={
-        "gui_scripts": [
-            "videocompressor=main:main"
-        ]
-    },
+    entry_points={"gui_scripts": ["videocompressor=main:main"]},
 )
