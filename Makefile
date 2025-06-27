@@ -1,25 +1,28 @@
+SHELL := /usr/bin/env bash
+.SHELLFLAGS := -euo pipefail -c
 .PHONY: all clean dist install uninstall run
 
-PACKAGE = videocompressor
+PACKAGE := videocompressor
+PYTHON  := $(shell command -v python3 >/dev/null && echo python3 || echo python)
 
 all: clean dist install
 
 clean:
 	@echo "🧼 Cleaning build artifacts..."
-	rm -rf build dist *.egg-info src/*.egg-info __pycache__ src/__pycache__
+	@bash clean_build.sh
 
 dist:
 	@echo "📦 Building wheel + sdist..."
-	python -m build
+	@$(PYTHON) -m build
 
 install:
 	@echo "📥 Installing package locally..."
-	pip install --force-reinstall ./dist/$(PACKAGE)-*.whl
+	@$(PYTHON) -m pip install --force-reinstall ./dist/$(PACKAGE)-*.whl
 
 uninstall:
-	@echo "🗑️  Uninstalling videocompressor..."
-	pip uninstall -y $(PACKAGE)
+	@echo "🗑️  Uninstalling $(PACKAGE)..."
+	@$(PYTHON) -m pip uninstall -y $(PACKAGE)
 
 run:
 	@echo "🚀 Running videocompressor..."
-	python main.py
+	@$(PYTHON) main.py
