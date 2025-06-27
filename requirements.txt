@@ -1,0 +1,4 @@
+PyQt6>=6.6.1
+requests>=2.31.0
+notifypy>=1.0.4
+psutil>=5.9.8
